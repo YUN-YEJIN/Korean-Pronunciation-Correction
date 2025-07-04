@@ -1,0 +1,137 @@
+/* style.css-- 화면에서 보이는 정적인 디자인 
+UI 요소의 디자인을 담당 (폰트, 색상, 배경,애니메이션 등등)
+*/
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+h1 {
+  color: #333;
+}
+.result-container {
+  margin-top: 1.5rem;
+}
+.result-box {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.original {
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  background-color: #fef2f0;
+}
+.corrected {
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+  background-color: #f0faf4;
+  display: none;
+}
+.result-label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+button#stop {
+  background-color: #f44336;
+}
+.status {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+.hidden {
+  display: none;
+}
+.loading {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #007bff;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 0.5rem;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.audio-visualizer {
+  margin-top: 1rem;
+  height: 60px;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+.debug-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-family: monospace;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  display: block;
+}
+.pronunciation-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#manual-input-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  background-color: #ebf5fb;
+}
+.tab-container {
+  display: flex;
+  margin-top: 1.5rem;
+}
+.tab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  background-color: #f5f5f5;
+}
+.tab.active {
+  background-color: white;
+  border-bottom: 1px solid white;
+  margin-bottom: -1px;
+  font-weight: bold;
+}
+.tab-content {
+  display: none;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 5px;
+}
+.tab-content.active {
+  display: block;
+}

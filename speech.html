@@ -1,0 +1,61 @@
+<!-- 사용자에게 보이는 웹페이지 뼈대를 구성한다. 
+      예를 들어) 버튼, 텍스트 입력창, 결과 표시 박스 등등 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>한국어 발음 교정 앱</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🎤 한국어 발음 교정</h1>
+
+  <div class="tab-container">
+    <div class="tab active" data-tab="voice">음성 입력</div>
+    <div class="tab" data-tab="manual">직접 입력</div>
+  </div>
+
+  <div id="voice-tab" class="tab-content active">
+    <button id="start">녹음 시작</button>
+    <button id="stop" disabled>🛑 녹음 중지</button>
+    <div class="status" id="status">시작하려면 녹음 버튼을 눌러주세요.</div>
+  </div>
+
+  <div id="manual-tab" class="tab-content">
+    <div id="manual-input-container">
+      <p>발음 소리를 그대로 입력해주세요:</p>
+      <input type="text" id="pronunciation-input" class="pronunciation-input" placeholder="예: '함버가 먹고 시따'">
+      <button id="submit-pronunciation">교정 요청</button>
+    </div>
+  </div>
+
+  <div class="result-container">
+    <div class="result-box original" id="original">
+      <span class="result-label">🎧 실제 발음:</span>
+      <div id="transcript">결과 대기 중...</div>
+    </div>
+
+    <div class="result-box corrected" id="corrected-container">
+      <span class="result-label">교정된 문장:</span>
+      <div id="corrected">교정 대기 중...</div>
+    </div>
+
+     <!-- 재생 버튼 추가 -->
+    <div style="margin-top: 1rem;">
+      <button id="play-original" disabled>▶ 내가 말한 문장 듣기</button>
+    </div>
+  </div>
+
+  <!-- 지금 발음한 오디오 태그 (숨김) -->
+  <audio id="recordedAudio" style="display:none;" controls></audio>
+ 
+  <div style="margin-top: 2rem;">
+    <h2>🗂️ 저장된 문장</h2>
+    <ul id="saved-list"></ul>
+  </div>
+
+  <div class="debug-info" id="debug-info"></div>
+
+  <script src="{{ url_for('static', filename='speech.js') }}"></script>
+</body>
+</html>
