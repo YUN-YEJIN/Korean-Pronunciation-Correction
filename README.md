@@ -1,4 +1,4 @@
-# 한국어 발음 교정 앱;
+# 한국어 어휘적 교정 앱;
 실시간 STT 구현 후 API로 openAI 연결해서 교정해주는 사이트
 
 1. ZIP 파일다운로드 후 압축 풀기
@@ -12,6 +12,7 @@
       pip install openai python-dotenv
 5. 터미널에 python app.py 입력하기
 6. 서버에 localhost 입력 후 들어가기 http://localhost:5000/speech.html
+
 
 
 
