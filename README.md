@@ -13,6 +13,10 @@
 5. 터미널에 python app.py 입력하기
 6. 서버에 localhost 입력 후 들어가기 http://localhost:5000/speech.html
 
+<img width="1917" height="938" alt="ex) 까레 까먹고 싶다" src="https://github.com/user-attachments/assets/5d0bb038-a6a7-48eb-a54f-1e0c5a2e7750" />
+
+
+
 
 
 
